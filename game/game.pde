@@ -1,6 +1,6 @@
 Orange o;
 Apple a;
-
+Player p;
 float border=30;
 boolean startUp=true;
 int menu=0;
@@ -12,6 +12,7 @@ void setup()
 size(700,600);background(247,247,240);
   o = new Orange();
   a = new Apple();
+  p= new Player();
 
 }
 
@@ -41,6 +42,7 @@ void draw()
      
        o.display();
        a.display();
+       p.display();
     break;
     }
    case 1: 
