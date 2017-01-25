@@ -9,7 +9,9 @@ int menu=0;
  PFont instructionsFont;
 void setup()
 {
-size(700,600);background(247,247,240);
+size(700,600);
+background(255);
+//put param here-----
   o = new Orange();
   a = new Apple();
   p= new Player();
@@ -32,7 +34,7 @@ void mousePressed()
 }
 void draw()
 {
-  background(17,247,161);
+  background(255);
   //switch statement to switch between screens
   switch(menu)
   {
@@ -57,8 +59,8 @@ void splashScreen()
 {
   //border for my screen
   strokeWeight(1);
- stroke(211,17,98);
- fill(17,247,245);
+ stroke(174,247,72);
+ fill(126,160,141);
  rect(border*2,border*2,width-border*4,height-border*4);
  fill(0);
 

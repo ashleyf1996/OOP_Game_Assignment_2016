@@ -2,12 +2,12 @@ class Orange extends Fruit
 {
  
  
-  Orange()
+  Orange(PVector location,PVector velocity)
   {
-    super();
-   location = new PVector(width-30,height/2-30);
+    super(location, velocity);
+   /*location = new PVector(width-30,height/2-30);
      loc = new PVector(width-38,height/2-48);
-     velocity = new PVector(0,-1);
+     velocity = new PVector(0,-1);*/ 
   }
    void display()
    {
@@ -20,9 +20,14 @@ class Orange extends Fruit
       stroke(0);
       fill(36,185,44);
       triangle(loc.x,loc.y,loc.x+8,loc.y+8,loc.x+16,loc.y);
-  
+  if(loc.y==100)
+     {
+       loc.y--;
+     }
       location.add(velocity);
+      
      loc.add(velocity);
+    
    }
     
     
