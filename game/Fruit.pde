@@ -4,12 +4,13 @@ class Fruit
   PVector location;
   PVector loc;
   PVector velocity;
-  Fruit(PVector location,PVector velocity)
+  Fruit(float a, float b, float c, float d)
   {
-
-    this.location = location;
-    this.velocity = velocity;
-     
+      
+   location = new PVector (a,b);
+   velocity = new PVector (c,d);
+  
+ 
    
   }
   

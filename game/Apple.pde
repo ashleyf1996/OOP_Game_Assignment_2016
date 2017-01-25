@@ -2,11 +2,10 @@ class Apple extends Fruit
 {
  
  
-  Apple(PVector location,PVector velocity)
+  Apple(float a,float b,float c,float d)
   {
-    super();
-   location = new PVector(width-30,height/2+30); 
-   velocity = new PVector (0,-1);
+    super(a,b,c,d);
+
   
    
   }

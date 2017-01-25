@@ -11,15 +11,16 @@ void setup()
 {
 size(700,600);
 background(255);
+
 //put param here-----
-  o = new Orange();
-  a = new Apple();
+  o = new Orange(width-30,height/2-30,0,-1);
+  a = new Apple(width-30,height/2+30,0,-1);
   p= new Player();
 
 }
 
 
-ArrayList<Fruit> fruit = new ArrayList<Fruit>();
+//ArrayList<Fruit> fruit = new ArrayList<Fruit>();
 void mousePressed()
 {
   if(mouseX>width/2 && mouseX<width/2+200)
@@ -40,14 +41,19 @@ void draw()
   {
     case 0: 
     {
+     loadingBar();
+    break;
+    }
+    
+    case 1:
+    {
       splashScreen();
      
        o.display();
        a.display();
        p.display();
-    break;
     }
-   case 1: 
+   case 2: 
     {
       level1();
     }
@@ -93,4 +99,24 @@ void level1()
  stroke(211,17,98);
  fill(255,0,0);
  rect(border*2,border*2,width-border*4,height-border*4);
+}
+
+void loadingBar()
+{
+  fill(0);
+  rect(0,0,width,height);
+  stroke(255);
+  fill(0);
+  text("Loading Game",width/2-100,height/2-100);
+  rect(width/2-150,height/2-50,300,40);
+  rect(width/2-150,height/2-50,300,40);
+  if(keyPressed)
+  {
+    if(keyCode == LEFT)
+  {
+    fill(0);
+  }
+  }
+  
+  
 }
