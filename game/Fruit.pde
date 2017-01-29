@@ -16,7 +16,7 @@ class Fruit
    
   }
   
-  void display()
+  void update()
   {
       
     

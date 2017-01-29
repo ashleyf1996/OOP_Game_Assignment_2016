@@ -9,23 +9,37 @@ int menu=0;
  PFont instructionsFont;
  float x=0;
 float y=1.5;
+
+boolean checkKey(int k)
+{
+  if (keys.length >= k) 
+  {
+    return keys[k] || keys[Character.toUpperCase(k)];  
+  }
+  return false;
+}
 void setup()
 {
 size(700,600);
 background(0);
 
 //put param here-----
-  for(int i=0; i< 5; i++)
+  for(int i=0; i< 3; i++)
   {
     o = new Orange(width-30,height/2-30,0,-1);
     fruit.add(o);
   }  
-    
-  a = new Apple(width-30,height/2+30,0,-1);
-  p= new Player();
+  
+   for(int i=3; i< 6; i++)
+  {
+    a = new Apple(width-30,height/2+30,0,-1);
+    fruit.add(a);
+  } 
+
+  p= new Player(width-30,height/2+90,0,-1);
 
 }
-
+boolean[] keys = new boolean[1000];
 ArrayList<Fruit> fruit = new ArrayList<Fruit>();
 void mousePressed()
 {
@@ -38,6 +52,16 @@ void mousePressed()
     //(width/2+20,height/2,200,70);
   }
  
+}
+
+void keyPressed()
+{ 
+  keys[keyCode] = true;
+}
+ 
+void keyReleased()
+{
+  keys[keyCode] = false; 
 }
 void draw()
 {
@@ -56,28 +80,30 @@ void draw()
     {
       splashScreen();
      
-       o.display();
-       a.display();
-       p.display();
+       o.update();
+       a.update();
+       p.update();
     }
     break;
    case 2: 
     {
       level1();
       
-        for(int i=0; i< 5; i++)
+        for(int i=0; i< 6; i++)
   {
     fruit.get(i).moving = false;
   }  
   
     
-   for(int i=0; i< 5; i++)
+   for(int i=0; i< 6; i++)
   {
-      fruit.get(i).display();
+      fruit.get(i).update();
  
     // o.display();
   }  
     
+   p.update();
+ // p.enemy();
     }
     break;
   }

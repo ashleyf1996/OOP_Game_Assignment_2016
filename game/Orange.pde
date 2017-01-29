@@ -1,3 +1,4 @@
+PShape orange;
 class Orange extends Fruit
 {
  boolean setOnce;
@@ -7,10 +8,14 @@ class Orange extends Fruit
      //calling constuctor in super classs 
     super(a,b,c,d);
    this.setOnce = false;
+ 
+ 
+   
+   
      //loc = new PVector(width-38,height/2-48);
    
   }
-   void display()
+   void update()
    {
      
      if(super.moving == true)
@@ -41,8 +46,8 @@ class Orange extends Fruit
      else {
        
        if(this.setOnce == false) {
-      location.x = random(60, width - 60);
-      location.y = random(60, height - 60);
+      location.x = random(70, width - 70);
+      location.y = random(70, height - 70);
           this.setOnce = true;
        }
       fill(255,154,3);
