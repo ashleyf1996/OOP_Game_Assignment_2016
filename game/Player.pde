@@ -7,19 +7,24 @@ class Player extends Fruit
   char up;
   char down; 
   char left;
-
+  PVector forward;
   char right;
+  PVector force;
       Player(float a,float b, float c, float d)
       {
         
             //passing back to my superclass
             super(a,b,c,d);
-            this.theta = theta;
+            this.theta = 0;
+            forward = new PVector(0, -1);
+            force = new PVector(0, 0);
                
      }
-      
+      float power=1;
       void update()
       {
+        forward.x= sin(theta);
+        forward.y= -cos(theta);
           rotate(theta); 
         //my player
         fill(255,0,0);
@@ -42,18 +47,17 @@ class Player extends Fruit
              if (keyCode ==UP)
                {
             
-                  location.add(velocity);  
+                  force.add(PVector.mult(forward,power));  
                }
                
               if(keyCode ==DOWN)
               {
-                location.sub(velocity);
+                force.add(PVector.mult(forward, -power));
               }
               
                if(keyCode ==RIGHT)
              {
-                 location.x=cos(theta);
-                 location.y=sin(theta);
+              
                  theta += 0.1f;
                 
               }
@@ -62,8 +66,8 @@ class Player extends Fruit
                if(keyCode ==LEFT)
               {
      
-                location.x=cos(theta);
-                location.y=sin(theta);
+               //location.x=cos(theta);
+                //location.y=sin(theta);
                 theta -= 0.01f;
               }
                 
