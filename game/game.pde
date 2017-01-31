@@ -10,14 +10,14 @@ int menu=0;
  float x=0;
 float y=1.5;
 
-boolean checkKey(int k)
+/*boolean checkKey(int k)
 {
   if (keys.length >= k) 
   {
     return keys[k] || keys[Character.toUpperCase(k)];  
   }
   return false;
-}
+}*/
 void setup()
 {
 size(700,600);
@@ -39,7 +39,7 @@ background(0);
   p= new Player(width-30,height/2+90,0,-1);
 
 }
-boolean[] keys = new boolean[1000];
+//boolean[] keys = new boolean[1000];
 ArrayList<Fruit> fruit = new ArrayList<Fruit>();
 void mousePressed()
 {
@@ -54,7 +54,7 @@ void mousePressed()
  
 }
 
-void keyPressed()
+/*void keyPressed()
 { 
   keys[keyCode] = true;
 }
@@ -62,10 +62,11 @@ void keyPressed()
 void keyReleased()
 {
   keys[keyCode] = false; 
-}
+}*/
 void draw()
 {
-  
+ 
+    
   //switch statement to switch between screens
   switch(menu)
   {
@@ -93,8 +94,12 @@ void draw()
   {
     fruit.get(i).moving = false;
   }  
-  
-    
+    if(p.location.x == o.location.x && p.location.y == o.location.y);
+    {
+      println("yo");
+    }
+   
+      
    for(int i=0; i< 6; i++)
   {
       fruit.get(i).update();

@@ -18,14 +18,14 @@ class Player extends Fruit
             this.theta = 0;
             forward = new PVector(0, -1);
             force = new PVector(0, 0);
+                 location.x=cos(theta);
+               location.y=sin(theta);   
                
      }
       float power=1;
       void update()
       {
-        forward.x= sin(theta);
-        forward.y= -cos(theta);
-          rotate(theta); 
+            rotate(theta);
         //my player
         fill(255,0,0);
         //main circle
@@ -40,34 +40,33 @@ class Player extends Fruit
         stroke(0);
        //line(locationl.x-28,locationl.y+32,locationl.x+40,locationl.y+30);
         rect(location.x-25,location.y+32,49,30);
-    
+ 
       
          if (keyPressed)
          {
              if (keyCode ==UP)
                {
             
-                  force.add(PVector.mult(forward,power));  
+                     location.add(velocity);
                }
                
               if(keyCode ==DOWN)
               {
-                force.add(PVector.mult(forward, -power));
+                 location.sub(velocity);
               }
               
                if(keyCode ==RIGHT)
              {
               
-                 theta += 0.1f;
+                 
+                 theta += 0.01f;
                 
               }
               
               
                if(keyCode ==LEFT)
               {
-     
-               //location.x=cos(theta);
-                //location.y=sin(theta);
+    
                 theta -= 0.01f;
               }
                 
@@ -76,12 +75,11 @@ class Player extends Fruit
               }
          
         
-          if(location.y == 300)
-          
-          {
-            location.sub(velocity);
-          }
-     
+         
+      }
+      void render()
+      {
+        
       }
       void enemy()
       {
