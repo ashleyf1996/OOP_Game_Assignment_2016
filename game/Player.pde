@@ -1,8 +1,8 @@
- 
+
 class Player extends Fruit
 {
     float theta;
-
+ PShape group;
   float move = 5;
   char up;
   char down; 
@@ -18,15 +18,34 @@ class Player extends Fruit
             this.theta = 0;
             forward = new PVector(0, -1);
             force = new PVector(0, 0);
-                 location.x=cos(theta);
-               location.y=sin(theta);   
-               
+        
+               create();
+              
+     }
+     void create()
+     {
+            group = createShape(GROUP);
+        fill(255,0,0);
+               PShape head = createShape(ELLIPSE,0,0,40,30);
+               PShape body = createShape(ELLIPSE,0,39,55,45);
+               PShape leftEar = createShape(ELLIPSE,-20,-10,20,20);
+               PShape rightEar = createShape(ELLIPSE,20,-10,20,20);
+               PShape rectangle = createShape(RECT,-25,32,49,30);
+                group.addChild(head);
+                group.addChild(body);
+                group.addChild(leftEar);
+                group.addChild(rightEar);
+                group.addChild(rectangle);
+   
      }
       float power=1;
       void update()
       {
-            rotate(theta);
-        //my player
+        
+        forward.x = sin(theta);
+        forward.y = -cos(theta);
+         
+       /* //my player
         fill(255,0,0);
         //main circle
         ellipse(location.x,location.y,40,30);
@@ -40,46 +59,49 @@ class Player extends Fruit
         stroke(0);
        //line(locationl.x-28,locationl.y+32,locationl.x+40,locationl.y+30);
         rect(location.x-25,location.y+32,49,30);
- 
+ */
       
-         if (keyPressed)
-         {
-             if (keyCode ==UP)
+
+             if (checkKey('w'))
                {
             
-                     location.add(velocity);
+                     super.location.add(PVector.mult(forward, power));
                }
                
-              if(keyCode ==DOWN)
+              /* if(keyCode ==DOWN)
               {
                  location.sub(velocity);
               }
-              
-               if(keyCode ==RIGHT)
+              */
+               if(checkKey('a'))
              {
               
                  
-                 theta += 0.01f;
+                 theta += 0.1f;
                 
               }
               
               
-               if(keyCode ==LEFT)
+               if(checkKey('d'))
               {
     
-                theta -= 0.01f;
+                theta -= 0.1f;
               }
                 
           
-            
-              }
-         
         
          
       }
       void render()
       {
-        
+         pushMatrix(); // Stores the current transform
+    translate(location.x, location.y);
+    println(location.x);
+    println(location.y);
+    rotate(theta);    
+    shape(group, 0, 0);
+    popMatrix();
+    
       }
       void enemy()
       {
