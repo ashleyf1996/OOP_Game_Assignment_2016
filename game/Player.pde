@@ -3,6 +3,7 @@ class Player extends Fruit
 {
     float theta;
  PShape group;
+ PShape group1;
   float move = 5;
   char up;
   char down; 
@@ -24,7 +25,10 @@ class Player extends Fruit
      }
      void create()
      {
+       
+             //CREATING MY PLAYER
             group = createShape(GROUP);
+   
         fill(255,0,0);
                PShape head = createShape(ELLIPSE,0,0,40,30);
                PShape body = createShape(ELLIPSE,0,39,55,45);
@@ -36,6 +40,33 @@ class Player extends Fruit
                 group.addChild(leftEar);
                 group.addChild(rightEar);
                 group.addChild(rectangle);
+                
+                //CREATING MY ENEMY
+                 group1= createShape(GROUP);
+               PShape maincircle = createShape(ELLIPSE,0,0,60,65);
+               PShape leftEye = createShape(ELLIPSE,-9,110,25,25);
+               PShape rightEye = createShape(ELLIPSE,10,110,25,25);
+               PShape bottomEye = createShape(ELLIPSE,0,130,25,25);
+               PShape bottomEyeDot = createShape(ELLIPSE,0,130,49,30);
+                     ellipse(location.x+10,location.y+110,25,25);
+                 
+                 
+                 
+                 
+      
+    
+      //bottom eye dot
+         fill(0);
+        ellipse(location.x,location.y+130,5,5);
+        
+      //left eye dot
+        ellipse(location.x-10,location.y+110,5,5);
+        
+        //right eye dot 
+        ellipse(location.x+10,location.y+110,5,5);
+                 
+                
+                
    
      }
       float power=1;
@@ -44,22 +75,23 @@ class Player extends Fruit
         
         forward.x = sin(theta);
         forward.y = -cos(theta);
+        
+         if(location.x < (border*2)+20)
+        {
+          location.x++;
+        }
+         if(location.x > (border*2 + (width-border*4-20))) {
+           location.x--;
+         }
          
-       /* //my player
-        fill(255,0,0);
-        //main circle
-        ellipse(location.x,location.y,40,30);
-        //left smaller circle
-        ellipse(location.x-20,location.y-10,20,20);
-        //righthside
-        ellipse(location.x+20,location.y-10,20,20);
-        //body
-        ellipse(location.x,location.y+39,55,45);
-        //line 1
-        stroke(0);
-       //line(locationl.x-28,locationl.y+32,locationl.x+40,locationl.y+30);
-        rect(location.x-25,location.y+32,49,30);
- */
+             if(location.y < (border*2)+20)
+        {
+          location.y++;
+        }
+         if(location.y > (border*2 + (height-border*4-20))) {
+           location.y--;
+         }
+       
       
 
              if (checkKey('w'))
