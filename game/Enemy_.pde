@@ -1,0 +1,7 @@
+class Enemy extends Fruit 
+{
+  
+  
+  
+  
+}

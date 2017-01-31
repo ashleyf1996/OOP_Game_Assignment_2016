@@ -53,6 +53,7 @@ class Player extends Fruit
                  
                  
                  
+                 
       
     
       //bottom eye dot

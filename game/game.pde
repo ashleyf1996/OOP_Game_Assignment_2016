@@ -37,6 +37,7 @@ background(0);
   } 
 
   p= new Player(width/2,height/2,0,-1);
+  e = new 
 
 }
 boolean[] keys = new boolean[1000];
