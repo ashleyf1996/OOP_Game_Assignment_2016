@@ -8,7 +8,7 @@ class Fruit
   
   Fruit(float a, float b, float c, float d)
   {
-   this.moving = true;   
+   this.moving = true;  
    location = new PVector (a,b);
    velocity = new PVector (c,d);
   

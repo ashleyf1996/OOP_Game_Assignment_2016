@@ -41,35 +41,8 @@ class Player extends Fruit
                 group.addChild(rightEar);
                 group.addChild(rectangle);
                 
-                //CREATING MY ENEMY
-                 group1= createShape(GROUP);
-               PShape maincircle = createShape(ELLIPSE,0,0,60,65);
-               PShape leftEye = createShape(ELLIPSE,-9,110,25,25);
-               PShape rightEye = createShape(ELLIPSE,10,110,25,25);
-               PShape bottomEye = createShape(ELLIPSE,0,130,25,25);
-               PShape bottomEyeDot = createShape(ELLIPSE,0,130,49,30);
-                     ellipse(location.x+10,location.y+110,25,25);
-                 
-                 
-                 
-                 
-                 
-      
-    
-      //bottom eye dot
-         fill(0);
-        ellipse(location.x,location.y+130,5,5);
-        
-      //left eye dot
-        ellipse(location.x-10,location.y+110,5,5);
-        
-        //right eye dot 
-        ellipse(location.x+10,location.y+110,5,5);
-                 
-                
-                
-   
-     }
+       
+               }
       float power=1;
       void update()
       {

@@ -1,6 +1,7 @@
 Orange o;
 Apple a;
 Player p;
+Enemy e;
 float border=30;
 boolean startUp=true;
 int menu=0;
@@ -37,7 +38,7 @@ background(0);
   } 
 
   p= new Player(width/2,height/2,0,-1);
-  e = new Ek
+  e = new Enemy(width/2,height/2,0,0);
 
 }
 boolean[] keys = new boolean[1000];
@@ -97,7 +98,11 @@ void draw()
         for(int i=0; i< 6; i++)
   {
     fruit.get(i).moving = false;
-  }  
+  } 
+  
+  e.location.x = lerp(p.location.x,e.location.x,0.1);
+  e.location.y = lerp(p.location.y,e.location.y,0.1);
+  
   p.update();
    p.render();
    
@@ -110,7 +115,8 @@ void draw()
   }  
     
    p.update();
- // p.enemy();
+     e.render();
+
     }
     break;
   }
@@ -130,8 +136,8 @@ void splashScreen()
 
  //font -- survive
 fontSplashpage = loadFont("Chalkduster-48.vlw");
-textFont(fontSplashpage, 70);
-text("Survive",width/2-130,height/2-100);
+textFont(fontSplashpage, 20);
+text("The Beautiful Ruth <3",width/2,height/2-100);
 
  //font -- survive
 instructionsFont = loadFont("Phosphate-Inline-20.vlw");
