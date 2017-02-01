@@ -109,39 +109,7 @@ class Player extends Fruit
     popMatrix();
     
       }
-      void enemy()
-      {
-       //enemy
-       //body
-       ellipse(location.x ,location.y+120,60,65);
-       //left eye
-       ellipse(location.x-9,location.y+110,25,25);
-       
-       //right eye
-       ellipse(location.x+10,location.y+110,25,25);
-       
-       //bottom eye
-       ellipse(location.x,location.y+130,25,25);
       
-    
-      //bottom eye dot
-         fill(0);
-        ellipse(location.x,location.y+130,5,5);
-        
-      //left eye dot
-        ellipse(location.x-10,location.y+110,5,5);
-        
-        //right eye dot 
-        ellipse(location.x+10,location.y+110,5,5);
-           location.add(velocity);
-          
-          if(location.y == 300)
-          
-          {
-            location.sub(velocity);
-          }
-   
-      }
   
 
         

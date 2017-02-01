@@ -100,8 +100,16 @@ void draw()
     fruit.get(i).moving = false;
   } 
   
-  e.location.x = lerp(p.location.x,e.location.x,0.1);
-  e.location.y = lerp(p.location.y,e.location.y,0.1);
+  e.location.x = lerp(e.location.x,p.location.x,0.3);
+  e.location.y = lerp(e.location.y,p.location.y,0.3);
+  e.location.x++;
+  e.location.y++;
+/*  if(e.location.x == p.location.x || e.location.y == p.location.y)
+  {
+    println("game over");
+    
+    
+  }*/
   
   p.update();
    p.render();
