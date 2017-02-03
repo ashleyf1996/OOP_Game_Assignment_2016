@@ -40,10 +40,9 @@ class Enemy extends Fruit
    
      shape(group2, 0, 0);
     popMatrix();
-    //this enemy stops the player getting the special fruit at the bottomm
-     location.x = lerp(e.location.x,p.location.x,0.01);
-     location.x = lerp(e.location.x,p.location.x,0.05);
- // location.y = lerp(e.location.y,p.location.y,0.01);
+    //this functionality is for level 1 and chases the player
+     location.x = lerp(e.location.x,p.location.x,0.003);
+     location.y = lerp(e.location.y,p.location.y,0.003);
 
     
       }

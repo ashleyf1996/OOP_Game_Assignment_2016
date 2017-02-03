@@ -95,24 +95,11 @@ void draw()
     {
       level1();
         for(int i=0; i< fruit.size(); i++)
-  {
-    fruit.get(i).moving = false;
-  
-  
-    case 3:
-    {
-      
-     level2(); 
-    }
-  }
-/*  if(e.location.x == p.location.x || e.location.y == p.location.y)
-  {
-    println("  game over");
-    
-    
-  }*/
-  
-  p.update();
+        {
+            fruit.get(i).moving = false;
+        }
+        
+         p.update();
    p.render();
    
       
@@ -124,13 +111,39 @@ void draw()
   }  
     
    p.update();
+    fill(255);
      e.render();
-     fill(255);
-     e1.render();
+    
+ 
 
     }
     break;
+    case 3:
+    {
+      level2();
+      score=0;
+          
+  /* p.update();
+    fill(255);
+     e.render();
+      e1.render();
+      */
+    }break;
+  
+        
+    
+  
+  
+  
   }
+/*  if(e.location.x == p.location.x || e.location.y == p.location.y)
+  {
+    println("  game over");
+    
+    
+  }*/
+  
+ 
   
 }
 
@@ -189,11 +202,11 @@ void level1()
        score++;
          fruit.remove(o);
          score = score + 5;
-    
-      if(score==6)
-      {
-       menu=3;
-      }
+          if(score==12)
+          {
+            menu=3;
+            
+          }
        
         }
 
@@ -202,6 +215,21 @@ void level1()
   
 }
 
+void level2()
+{
+  fill(0);
+  println("hi");
+   score=0;
+    text("score = "+score,width-200,35);
+    strokeWeight(1);
+ stroke(211,17,98);
+ fill(255,255,0);
+ rect(0,0,width,height);
+ fill(255,0,255);
+ rect(border*2,border*2,width-border*4,height-border*4);
+ fill(0); 
+  
+}
 void loadingBar()
 {
   //background(0);
@@ -231,16 +259,4 @@ x=x+y;
   }
   
   
-  
-    
-  void level2()
-  {
-       strokeWeight(1);
- stroke(211,17,98);
- fill(255,255,0);
- rect(0,0,width,height);
- fill(255,0,255);
- rect(border*2,border*2,width-border*4,height-border*4);
- fill(0); 
-  }
-}
+ 
