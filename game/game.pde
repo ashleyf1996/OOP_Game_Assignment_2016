@@ -217,10 +217,8 @@ void level1()
 
 void level2()
 {
-  fill(0);
-  println("hi");
-   score=0;
-    text("score = "+score,width-200,35);
+
+
     strokeWeight(1);
  stroke(211,17,98);
  fill(255,255,0);
@@ -228,6 +226,8 @@ void level2()
  fill(255,0,255);
  rect(border*2,border*2,width-border*4,height-border*4);
  fill(0); 
+    score=0;
+    text("score = "+score,width-200,35);
   
 }
 void loadingBar()
