@@ -12,7 +12,7 @@ class Enemy extends Fruit
   {
     group2= createShape(GROUP);
     
-
+               fill(255,255,0);
                PShape mainCircle = createShape(ELLIPSE,0,120,60,65);
                PShape leftEye = createShape(ELLIPSE,-9,110,25,25);
                PShape rightEye = createShape(ELLIPSE,10,110,25,25);
@@ -42,7 +42,7 @@ class Enemy extends Fruit
     popMatrix();
     //this enemy stops the player getting the special fruit at the bottomm
      location.x = lerp(e.location.x,p.location.x,0.01);
-     location.x = lerp(e1.location.x,p.location.x,0.01);
+     location.x = lerp(e.location.x,p.location.x,0.05);
  // location.y = lerp(e.location.y,p.location.y,0.01);
 
     

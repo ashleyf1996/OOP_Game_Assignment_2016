@@ -11,6 +11,7 @@ int menu=0;
  PFont instructionsFont;
  float x=0;
 float y=1.5;
+int score=0;
 
 boolean checkKey(int k)
 {
@@ -32,7 +33,7 @@ background(0);
     fruit.add(o);
   }  
   
-   for(int i=3; i< 6; i++)
+   for(int i=4; i< 6; i++)
   {
     a = new Apple(width-30,height/2+30,0,-1);
     fruit.add(a);
@@ -93,16 +94,17 @@ void draw()
    case 2: 
     {
       level1();
-      if(p.location.x == o.location.x && p.location.y == o.location.y);
-    {
-      println("yo");
-    }
-        for(int i=0; i< 6; i++)
+        for(int i=0; i< fruit.size(); i++)
   {
     fruit.get(i).moving = false;
-  } 
   
-
+  
+    case 3:
+    {
+      
+     level2(); 
+    }
+  }
 /*  if(e.location.x == p.location.x || e.location.y == p.location.y)
   {
     println("  game over");
@@ -114,7 +116,7 @@ void draw()
    p.render();
    
       
-   for(int i=0; i< 6; i++)
+   for(int i=0; i< fruit.size(); i++)
   {
       fruit.get(i).update();
  
@@ -123,6 +125,7 @@ void draw()
     
    p.update();
      e.render();
+     fill(255);
      e1.render();
 
     }
@@ -174,6 +177,29 @@ void level1()
  rect(0,0,width,height);
  fill(255,0,255);
  rect(border*2,border*2,width-border*4,height-border*4);
+ fill(0);
+   text("score = "+score,width-200,35);
+ for(int i=fruit.size()-1; i >=0; i--)
+      {
+        Fruit o = fruit.get(i);
+        Fruit a = fruit.get(i);
+        if(p.location.x >=o.location.x-10&& p.location.y>=o.location.y-10&& p.location.x<=o.location.x+10&& p.location.y<=o.location.y+10)
+        {
+       fruit.remove(a);
+       score++;
+         fruit.remove(o);
+         score = score + 5;
+    
+      if(score==6)
+      {
+       menu=3;
+      }
+       
+        }
+
+        
+ }
+  
 }
 
 void loadingBar()
@@ -199,5 +225,22 @@ x=x+y;
   menu=1; 
    
  }
+
+    
+    
+  }
   
+  
+  
+    
+  void level2()
+  {
+       strokeWeight(1);
+ stroke(211,17,98);
+ fill(255,255,0);
+ rect(0,0,width,height);
+ fill(255,0,255);
+ rect(border*2,border*2,width-border*4,height-border*4);
+ fill(0); 
+  }
 }

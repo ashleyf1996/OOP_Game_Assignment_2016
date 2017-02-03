@@ -102,8 +102,7 @@ class Player extends Fruit
       {
          pushMatrix(); // Stores the current transform
     translate(location.x, location.y);
-    println(location.x);
-    println(location.y);
+
     rotate(theta);    
     shape(group, 0, 0);
     popMatrix();
