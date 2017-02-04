@@ -1,5 +1,6 @@
 Orange o;
 Apple a;
+Strawberry s;
 Player p;
 Enemy e;
 Enemy e1;
@@ -39,6 +40,7 @@ background(0);
     fruit.add(a);
   } 
 
+  s = new Strawberry(width/2,height/2,0,-1);
   p= new Player(width/2,height/2,0,-1);
   e = new Enemy(width/2,height/2,0,0);
   e1 = new Enemy(width/2+900,height/2+90,0,0);
