@@ -1,6 +1,7 @@
 Orange o;
 Apple a;
 Strawberry s;
+Strawberry s1;
 Player p;
 Enemy e;
 Enemy e1;
@@ -41,6 +42,7 @@ background(0);
   } 
 
   s = new Strawberry(width/2,height/2,0,-1);
+  s1 = new Strawberry(width/2+100,height/2,0,-1);
   p= new Player(width/2,height/2,0,-1);
   e = new Enemy(width/2,height/2,0,0);
   e1 = new Enemy(width/2+900,height/2+90,0,0);
@@ -93,6 +95,8 @@ void draw()
        p.update();
        s.update();
        s.render();
+       s1.update();
+       s1.render();
     }
     break;
    case 2: 
@@ -117,7 +121,8 @@ void draw()
    p.update();
     fill(255);
      e.render();
-    
+     s.update();
+       s.render();
  
 
     }
