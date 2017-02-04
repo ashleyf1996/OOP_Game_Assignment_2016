@@ -91,6 +91,8 @@ void draw()
        o.update();
        a.update();
        p.update();
+       s.update();
+       s.render();
     }
     break;
    case 2: 
@@ -163,7 +165,9 @@ void splashScreen()
  //font -- survive
 fontSplashpage = loadFont("Chalkduster-48.vlw");
 textFont(fontSplashpage, 70);
-text("Survive",width/2,height/2-100);
+
+//name ideas; the 2 f's capital, each letter a different colour
+text("Fruit Fever",width/2,height/2-100);
 
  //font -- survive
 instructionsFont = loadFont("Phosphate-Inline-20.vlw");
