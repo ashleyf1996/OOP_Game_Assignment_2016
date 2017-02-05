@@ -219,29 +219,27 @@ fill(255,0,0);
 
 //play button 
  fill(17,247,245);
-ellipse(width/2+20,height/2,200,70);
+ellipse(width/2+3,height/2-65,80,40);
 fill(0);
 //button font
 buttonFont = loadFont("HannotateSC-W5-48.vlw");
-textFont(buttonFont, 70);
-textSize(40);
-text("PLAY", width/2-30,height/2+15);
+textFont(buttonFont, 20);
+
+text("PLAY", width/2-20,height/2-58);
 
     for (TableRow row : table.rows()) {
          String name = row.getString("name");
-         Integer age = row.getInt("age");
+         String age = row.getString("age");
          String objective = row.getString("objective");
          inst = new Instructions(name, age, objective);
          targets.add(inst);
-      
-         textSize(10);
-         text("NAME",40,130);
-         text("AGE",40,280);
-         text("STATUS",40,430);
+          text("->",width/2-70,height/2+20);
+           text("->",width/2-70,height/2+60);
          textSize(20);
-         text(name,55, height-border);
-         text(age, 85, 300);
-         text(objective, 85, 450);
+         //collect
+         text(name,width/2-45, height/2+20);
+         text(age, width/2-45, height/2+60);
+         text(objective, width/2-45, height/2+120);
     
 }
    

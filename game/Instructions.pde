@@ -2,12 +2,12 @@
 class Instructions
 {
 
-    int age;
+    String age;
     String objective;
   String name;
  
     //Parameterised Constructor
-    Instructions(String name, int age, String objective)
+    Instructions(String name, String age, String objective)
     {
    this.name = name;
     this.age = age;
