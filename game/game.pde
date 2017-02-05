@@ -90,13 +90,13 @@ void draw()
     {
       splashScreen();
      
-       o.update();
+      /* o.update();
        a.update();
        p.update();
        s.update();
        s.render();
        s1.update();
-       s1.render();
+       s1.render();*/
     }
     break;
    case 2: 
@@ -159,20 +159,58 @@ void draw()
 void splashScreen()
 {
   //border for my screen
-  background(255);
-  strokeWeight(1);
+  background(151,245,244);
+  strokeWeight(2);
  stroke(174,247,72);
 
- fill(126,160,141);
+ fill(255);
  rect(border*2,border*2,width-border*4,height-border*4);
  fill(0);
 
  //font -- survive
-fontSplashpage = loadFont("Chalkduster-48.vlw");
-textFont(fontSplashpage, 70);
+fontSplashpage = loadFont("AndaleMono-48.vlw");
+textFont(fontSplashpage, 50);
 
-//name ideas; the 2 f's capital, each letter a different colour
-text("Fruit Fever",width/2,height/2-100);
+/*//name ideas; the 2 f's capital, each letter a different colour
+ fill(255,154,3);
+ textSize(70);
+text("F",width/2-150,height/2-150);
+textSize(50);
+fill(0,255,0);
+text("r",width/2-150+30,height/2-150);
+//fill(255,0,0);
+//text("u",width/2-150+30,height/2-150);*/
+textSize(70);
+ fill(255,154,3);
+  //fruit
+text("F",width/2-125,height/2-150);
+textSize(50);
+fill(0,255,0);
+text("r",width/2-125+30,height/2-150);
+fill(255,0,0);
+text("u",width/2-125+55,height/2-150);
+ fill(255,154,3);
+text("i",width/2-125+80,height/2-150);
+fill(0,255,0);
+text("t",width/2-125+100,height/2-150);
+fill(255,0,0);
+
+//fever
+textSize(70);
+ fill(255,154,3);
+  //fruit
+text("F",width/2,height/2-113);
+textSize(50);
+fill(0,255,0);
+text("e",width/2+30,height/2-113);
+fill(255,0,0);
+text("v",width/2+55,height/2-113);
+ fill(255,154,3);
+text("e",width/2+80,height/2-113);
+fill(0,255,0);
+text("r",width/2+105,height/2-113);
+fill(255,0,0);
+
 
  //font -- survive
 instructionsFont = loadFont("Phosphate-Inline-20.vlw");
