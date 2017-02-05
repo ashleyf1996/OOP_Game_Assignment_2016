@@ -21,6 +21,19 @@ class Apple extends Fruit
      line(location.x,location.y-25,location.x+5,location.y-30);
     ellipse(location.x,location.y,30,35);
     location.add(velocity);
+    
+     if(location.y == 200)
+          
+          {
+            location.sub(velocity);
+          }
+      
+         if(a1.location.y == 400)
+          
+          {
+            location.sub(velocity);
+          }
+      
    
      }
      else 

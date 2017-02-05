@@ -1,5 +1,8 @@
 Orange o;
+Orange o1;
+Orange o2;
 Apple a;
+Apple a1;
 Strawberry s;
 Strawberry s1;
 Player p;
@@ -35,16 +38,20 @@ table = loadTable("data.tsv", "header, tsv");
 //put param here-----
   for(int i=0; i< 3; i++)
   {
-    o = new Orange(width-30,height/2-30,0,-1);
+    o = new Orange(width-30,height,0,-1);
     fruit.add(o);
   }  
   
    for(int i=4; i< 6; i++)
   {
-    a = new Apple(width-30,height/2+30,0,-1);
+    a = new Apple(width-30,height+90,0,-1);
     fruit.add(a);
   } 
+  
+  o1 = new Orange(width-30,height+170,0,-1);
 
+ a1 = new Apple(width-30,height+260,0,-1);
+ o2 = new Orange(width-30,height+340,0,-1);
   s = new Strawberry(width/2,height/2,0,-1);
   s1 = new Strawberry(width/2+100,height/2,0,-1);
   p= new Player(width/2,height/2,0,-1);
@@ -94,12 +101,16 @@ void draw()
     {
       splashScreen();
      
-      /* o.update();
+      o.update();
        a.update();
-       p.update();
+     // / a1.update();
+      o1.update();
+      o2.update();
+      a1.update();
+      /* p.update();
        s.update();
        s.render();
-       s1.update();
+      * s1.update();
        s1.render();*/
     }
     break;
