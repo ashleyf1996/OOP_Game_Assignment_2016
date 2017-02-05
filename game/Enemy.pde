@@ -12,7 +12,7 @@ class Enemy extends Fruit
   {
     group2= createShape(GROUP);
     
-               fill(255,255,0);
+               fill(255,0,0);
                PShape mainCircle = createShape(ELLIPSE,0,120,60,65);
                PShape leftEye = createShape(ELLIPSE,-9,110,25,25);
                PShape rightEye = createShape(ELLIPSE,10,110,25,25);
@@ -31,6 +31,8 @@ class Enemy extends Fruit
                 group2.addChild(leftEyeDot);       
                 group2.addChild(rightEyeDot);
          
+         
+         e1.location.add(velocity);
     
   }
       void render()

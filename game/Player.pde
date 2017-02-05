@@ -29,7 +29,7 @@ class Player extends Fruit
              //CREATING MY PLAYER
             group = createShape(GROUP);
    
-        fill(255,0,0);
+        fill(255,255,0);
                PShape head = createShape(ELLIPSE,0,0,40,30);
                PShape body = createShape(ELLIPSE,0,39,55,45);
                PShape leftEar = createShape(ELLIPSE,-20,-10,20,20);
@@ -41,7 +41,7 @@ class Player extends Fruit
                 group.addChild(rightEar);
                 group.addChild(rectangle);
                 
-       
+
                }
       float power=1;
       void update()
@@ -50,22 +50,23 @@ class Player extends Fruit
         forward.x = sin(theta);
         forward.y = -cos(theta);
         
-         if(location.x < (border*2)+20)
+         if(p.location.x < (border*2)+20)
         {
-          location.x++;
+          p.location.x++;
         }
-         if(location.x > (border*2 + (width-border*4-20))) {
-           location.x--;
+         if(p.location.x > (border*2 + (width-border*4-20))) {
+           p.location.x--;
          }
          
-             if(location.y < (border*2)+20)
+             if(p.location.y < (border*2)+20)
         {
-          location.y++;
+          p.location.y++;
         }
-         if(location.y > (border*2 + (height-border*4-20))) {
-           location.y--;
+         if(p.location.y > (border*2 + (height-border*4-20))) {
+           p.location.y--;
          }
-       
+         
+     
       
 
              if (checkKey('w'))
@@ -95,8 +96,13 @@ class Player extends Fruit
               }
                 
           
-        
          
+         p1.location.add(velocity);
+      if(p1.location.y == 200)
+       {
+          location.sub(velocity);
+       }
+       
       }
       void render()
       {

@@ -6,6 +6,7 @@ Apple a1;
 Strawberry s;
 Strawberry s1;
 Player p;
+Player p1;
 Enemy e;
 Enemy e1;
 Table table;
@@ -55,8 +56,9 @@ table = loadTable("data.tsv", "header, tsv");
   s = new Strawberry(width/2,height/2,0,-1);
   s1 = new Strawberry(width/2+100,height/2,0,-1);
   p= new Player(width/2,height/2,0,-1);
+  p1= new Player(width/2-320,height,0,-5);
   e = new Enemy(width/2,height/2,0,0);
-  e1 = new Enemy(width/2+900,height/2+90,0,0);
+  e1 = new Enemy(width/2-320,height/2+50,0,-5);
 
 }
 boolean[] keys = new boolean[1000];
@@ -107,10 +109,13 @@ void draw()
       o1.update();
       o2.update();
       a1.update();
-      /* p.update();
+      p1.update();
+      p1.render();
+      e1.update();
+      e1.render();
        s.update();
        s.render();
-      * s1.update();
+      /*s1.update();
        s1.render();*/
     }
     break;
