@@ -160,8 +160,8 @@ void splashScreen()
 {
   //border for my screen
   background(151,245,244);
-  strokeWeight(2);
- stroke(174,247,72);
+  strokeWeight(1);
+ stroke(0);
 
  fill(255);
  rect(border*2,border*2,width-border*4,height-border*4);
@@ -288,7 +288,7 @@ void loadingBar()
 
  rect(width/2+150,height/2-50,350,100);
 
-  fill(255,0,0);
+  fill(70,188,181);
   noStroke();
 rect(width/2-150,height/2-50,x,50);
 if(x==300)
