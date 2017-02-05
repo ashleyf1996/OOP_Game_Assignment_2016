@@ -5,6 +5,7 @@ Strawberry s1;
 Player p;
 Enemy e;
 Enemy e1;
+Table table;
 float border=30;
 boolean startUp=true;
 int menu=0;
@@ -14,6 +15,9 @@ int menu=0;
  float x=0;
 float y=1.5;
 int score=0;
+
+ArrayList<Instructions> targets= new ArrayList<Instructions>();  
+ Instructions inst;
 
 boolean checkKey(int k)
 {
@@ -27,7 +31,7 @@ void setup()
 {
 size(700,600);
 background(0);
-
+table = loadTable("data.tsv", "header, tsv");
 //put param here-----
   for(int i=0; i< 3; i++)
   {
@@ -212,12 +216,6 @@ text("r",width/2+105,height/2-113);
 fill(255,0,0);
 
 
- //font -- survive
-instructionsFont = loadFont("Phosphate-Inline-20.vlw");
-textFont(instructionsFont, 20);
-text(" * Collect the fruit",width/2-100,height/2+100);
-text(" * Dodge the enemies",width/2-100,height/2+150);
-
 
 //play button 
  fill(17,247,245);
@@ -228,6 +226,25 @@ buttonFont = loadFont("HannotateSC-W5-48.vlw");
 textFont(buttonFont, 70);
 textSize(40);
 text("PLAY", width/2-30,height/2+15);
+
+    for (TableRow row : table.rows()) {
+         String name = row.getString("name");
+         Integer age = row.getInt("age");
+         String objective = row.getString("objective");
+         inst = new Instructions(name, age, objective);
+         targets.add(inst);
+      
+         textSize(10);
+         text("NAME",40,130);
+         text("AGE",40,280);
+         text("STATUS",40,430);
+         textSize(20);
+         text(name,55, height-border);
+         text(age, 85, 300);
+         text(objective, 85, 450);
+    
+}
+   
  
 }
 void level1()
@@ -268,7 +285,7 @@ void level2()
 {
 
 
-    strokeWeight(1);
+    strokeWeight(1.5);
  stroke(211,17,98);
  fill(255,255,0);
  rect(0,0,width,height);
