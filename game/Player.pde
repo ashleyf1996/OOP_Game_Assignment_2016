@@ -29,17 +29,20 @@ class Player extends Fruit
              //CREATING MY PLAYER
             group = createShape(GROUP);
    
-        fill(255,255,0);
-               PShape head = createShape(ELLIPSE,0,0,40,30);
-               PShape body = createShape(ELLIPSE,0,39,55,45);
-               PShape leftEar = createShape(ELLIPSE,-20,-10,20,20);
+      
+             fill(255,0,255);
+                   PShape leftEar = createShape(ELLIPSE,-20,-10,20,20);
                PShape rightEar = createShape(ELLIPSE,20,-10,20,20);
-               PShape rectangle = createShape(RECT,-25,32,49,30);
+               PShape body = createShape(ELLIPSE,0,39,55,45);
+            PShape head = createShape(ELLIPSE,0,0,40,30);
+            
+            
+              // PShape rectangle = createShape(RECT,-25,32,49,30);
                 group.addChild(head);
                 group.addChild(body);
                 group.addChild(leftEar);
                 group.addChild(rightEar);
-                group.addChild(rectangle);
+               // group.addChild(rectangle);
                 
 
                }

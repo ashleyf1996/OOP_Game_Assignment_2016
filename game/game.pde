@@ -48,17 +48,23 @@ table = loadTable("data.tsv", "header, tsv");
     a = new Apple(width-30,height+90,0,-1);
     fruit.add(a);
   } 
-  
+ 
+    for(int i=5; i< 6; i++)
+  {
+    s = new Strawberry(width/2+75,height/2-380,0,-1);
+    fruit.add(o);
+  }  
   o1 = new Orange(width-30,height+170,0,-1);
 
  a1 = new Apple(width-30,height+260,0,-1);
  o2 = new Orange(width-30,height+340,0,-1);
-  s = new Strawberry(width/2,height/2,0,-1);
+
   s1 = new Strawberry(width/2+100,height/2,0,-1);
   p= new Player(width/2,height/2,0,-1);
+  e = new Enemy(width/2,height/2,0,-1);
   p1= new Player(width/2-320,height,0,-5);
-    e1 = new Enemy(width/2-320,height+50,0,-5);
-  e = new Enemy(width/2,height/2,0,0);
+    e1 = new Enemy(width/2-320,height,0,-5);
+ 
 
 
 }
@@ -141,7 +147,9 @@ void draw()
     
    p.update();
     fill(255);
+    e.update();
      e.render();
+     
      s.update();
        s.render();
  
@@ -152,12 +160,7 @@ void draw()
     {
       level2();
       score=0;
-          
-  /* p.update();
-    fill(255);
-     e.render();
-      e1.render();
-      */
+     
     }break;
   
         
@@ -257,7 +260,23 @@ text("PLAY", width/2-20,height/2-58);
          text(name,width/2-45, height/2+20);
          text(age, width/2-45, height/2+60);
          text(objective, width/2-45, height/2+120);
+    //player comment box
+        textSize(10);
+fill(0);
+    line(60,230,80,230);
+    noFill();
+    rect(80,200,110,35);
+    text("I'm a fruit eating bear!",85,210);
+    text("Escape the enemy!",85,230);
     
+    //ENEMY COMMENT BOX
+    textSize(10);
+    text("I'm a fruit eating monster!",90,360);
+    text("Need to catch the player!",90,380);
+    fill(0);
+    line(60,380,80,380);
+    noFill();
+    rect(80,350,140,40);
 }
    
  
@@ -267,9 +286,9 @@ void level1()
 
     strokeWeight(1);
  stroke(211,17,98);
- fill(255,255,0);
+ fill(151,245,244);
  rect(0,0,width,height);
- fill(255,0,255);
+ fill(255);
  rect(border*2,border*2,width-border*4,height-border*4);
  fill(0);
    text("score = "+score,width-200,35);
@@ -277,13 +296,15 @@ void level1()
       {
         Fruit o = fruit.get(i);
         Fruit a = fruit.get(i);
-        if(p.location.x >=o.location.x-10&& p.location.y>=o.location.y-10&& p.location.x<=o.location.x+10&& p.location.y<=o.location.y+10)
+        Fruit s = fruit.get(i);
+        if(p.location.x >=o.location.x-15&& p.location.y>=o.location.y-15&& p.location.x<=o.location.x+15&& p.location.y<=o.location.y+15)
         {
+          fruit.remove(s);
        fruit.remove(a);
        score++;
          fruit.remove(o);
          score = score + 5;
-          if(score==12)
+          if(score==30)
           {
             menu=3;
             
