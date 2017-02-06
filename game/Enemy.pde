@@ -17,16 +17,18 @@ class Enemy extends Fruit
                fill(255,0,0);
                PShape mainCircle = createShape(ELLIPSE,0,120,60,65);
                fill(255);
-               PShape leftEye = createShape(ELLIPSE,-20,110,35,25);
-               PShape rightEye = createShape(ELLIPSE,22,110,35,25);
+               fill(0,0,255);
+               PShape leftEye = createShape(ELLIPSE,-10,110,20,25);
+               PShape rightEye = createShape(ELLIPSE,12,110,20,25);
+               fill(255);
                PShape bottomEye = createShape(ELLIPSE,0,135,30,20);
                  fill(0,0);
-               PShape lineInMouth = createShape(ELLIPSE,0,135,10,10);
+               PShape lineInMouth = createShape(ELLIPSE,0,135,35,5);
                
               fill(0);
             
-               PShape leftEyeDot = createShape(ELLIPSE,-20,110,5,5);
-             PShape rightEyeDot = createShape(ELLIPSE,+20,110,5,5);
+               PShape leftEyeDot = createShape(ELLIPSE,-10,110,5,5);
+             PShape rightEyeDot = createShape(ELLIPSE,+13,110,5,5);
                  
                   enemy.addChild(mainCircle);
                 enemy.addChild(leftEye);

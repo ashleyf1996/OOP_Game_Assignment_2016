@@ -13,7 +13,7 @@ Table table;
 float border=30;
 boolean startUp=true;
 int menu=0;
- PFont fontSplashpage;
+ PFont fontSplashPage;
  PFont buttonFont;
  PFont instructionsFont;
  float x=0;
@@ -184,26 +184,14 @@ void splashScreen()
 {
   //border for my screen
   background(151,245,244);
-  strokeWeight(1);
+  strokeWeight(2);
  stroke(0);
 
  fill(255);
  rect(border*2,border*2,width-border*4,height-border*4);
  fill(0);
 
- //font -- survive
-fontSplashpage = loadFont("AndaleMono-48.vlw");
-textFont(fontSplashpage, 50);
 
-/*//name ideas; the 2 f's capital, each letter a different colour
- fill(255,154,3);
- textSize(70);
-text("F",width/2-150,height/2-150);
-textSize(50);
-fill(0,255,0);
-text("r",width/2-150+30,height/2-150);
-//fill(255,0,0);
-//text("u",width/2-150+30,height/2-150);*/
 textSize(70);
  fill(255,154,3);
   //fruit
@@ -245,27 +233,30 @@ fill(0);
 buttonFont = loadFont("HannotateSC-W5-48.vlw");
 textFont(buttonFont, 20);
 
+
 text("PLAY", width/2-20,height/2-58);
 
+instructionsFont = loadFont("HannotateSC-W5-48.vlw");
+textFont(instructionsFont, 20);
     for (TableRow row : table.rows()) {
          String name = row.getString("name");
          String age = row.getString("age");
          String objective = row.getString("objective");
          inst = new Instructions(name, age, objective);
          targets.add(inst);
-          text("->",width/2-70,height/2+20);
-           text("->",width/2-70,height/2+60);
+          text("->",width/2-80,height/2+20);
+           text("->",width/2-80,height/2+60);
          textSize(20);
          //collect
-         text(name,width/2-45, height/2+20);
-         text(age, width/2-45, height/2+60);
+         text(name,width/2-50, height/2+20);
+         text(age, width/2-50, height/2+60);
          text(objective, width/2-45, height/2+120);
     //player comment box
         textSize(10);
 fill(0);
     line(60,230,80,230);
-    noFill();
-    rect(80,200,110,35);
+   // noFill();
+   // rect(80,200,110,35);
     text("I'm a fruit eating bear!",85,210);
     text("Escape the enemy!",85,230);
     
@@ -275,12 +266,23 @@ fill(0);
     text("Need to catch the player!",90,380);
     fill(0);
     line(60,380,80,380);
-    noFill();
-    rect(80,350,140,40);
+    
+    noStroke();
+    fill(255);
+    rect(border+50,border*2+20,150,rect);
+   rect = rect-2;
+   if(rect == border*2+20)
+   {
+    rect = rect+2; 
+     
+   }
+   // noFill();
+   // rect(80,350,140,40);
 }
    
  
 }
+  float rect= height/2+300;
 void level1()
 {
 
