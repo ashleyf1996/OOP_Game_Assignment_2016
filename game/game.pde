@@ -57,7 +57,7 @@ table = loadTable("data.tsv", "header, tsv");
   s1 = new Strawberry(width/2+100,height/2,0,-1);
   p= new Player(width/2,height/2,0,-1);
   p1= new Player(width/2-320,height,0,-5);
-    e1 = new Enemy(width/2-320,height+10,0,-5);
+    e1 = new Enemy(width/2-320,height+50,0,-5);
   e = new Enemy(width/2,height/2,0,0);
 
 
