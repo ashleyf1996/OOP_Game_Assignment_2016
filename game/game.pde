@@ -10,7 +10,7 @@ Strawberry s1;
 Player p;
 Player p1;
 Enemy e;
-Enemy e1;
+Enemy SplashScreenEnemy;
 Table table;
 float border=30;
 boolean startUp=true;
@@ -21,7 +21,7 @@ int menu=0;
  float x=0;
 float y=1.5;
 int score=0;
-
+boolean startEnemy = true;
 ArrayList<Instructions> targets= new ArrayList<Instructions>();  
  Instructions inst;
 
@@ -51,19 +51,7 @@ table = loadTable("data.tsv", "header, tsv");
     fruit.add(a);
   } 
   
-  
-  
-    for(int i=0; i< 9; i++)
-  {
-    or = new Orange(width-30,height,0,-2);
-    fruit.add(o);
-  }  
-  
-   for(int i=10; i< 14; i++)
-  {
-    ar = new Apple(width-30,height+90,0,-2);
-    fruit.add(a);
-  }
+ 
    
   o1 = new Orange(width-30,height+170,0,-2);
  s = new Strawberry(width/2+75,height/2-380,0,-1);
@@ -74,7 +62,7 @@ table = loadTable("data.tsv", "header, tsv");
   p= new Player(width/2,height/2,0,-1);
   e = new Enemy(width/2,height/2,0,-1);
   p1= new Player(width/2-320,height,0,-5);
-    e1 = new Enemy(width/2-320,height,0,-5);
+    SplashScreenEnemy = new Enemy(width/2-320,height,0,-5);
  
 
 
@@ -129,8 +117,8 @@ void draw()
       a1.update();
       p1.update();
       p1.render();
-      e1.update();
-      e1.render();
+      SplashScreenEnemy.update();
+     SplashScreenEnemy.render();
        s.update();
        s.render();
       /*s1.update();
@@ -180,10 +168,7 @@ void draw()
         
       level2();
       score=0;
-      or.update();
-
-      ar.update();
-
+  
      
     }break;
   
@@ -206,6 +191,8 @@ void draw()
 
 void splashScreen()
 {
+  
+  startEnemy=true;
   //border for my screen
   background(151,245,244);
   strokeWeight(2);
@@ -310,6 +297,7 @@ fill(0);
 void level1()
 {
 
+  startEnemy=false;
     strokeWeight(3);
  stroke(211,17,98);
  fill(169,234,240);

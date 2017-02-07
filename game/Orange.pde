@@ -8,13 +8,13 @@ class Orange extends Fruit
      //calling constuctor in super classs 
     super(a,b,c,d);
    this.setOnce = false;
- 
- 
-   
-   
-     //loc = new PVector(width-38,height/2-48);
+         
+         create();
    
   }
+  
+  void create();
+  {
    void update()
    {
      
