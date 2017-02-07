@@ -65,19 +65,19 @@ class Player extends Fruit
         forward.x = sin(theta);
         forward.y = -cos(theta);
         
-         if(p.location.x < (border*2)+20)
+         if(p.location.x < (border*2))
         {
           p.location.x++;
         }
-         if(p.location.x > (border*2 + (width-border*4-20))) {
+         if(p.location.x > (border*2 + (width-border*6))) {
            p.location.x--;
          }
          
-             if(p.location.y < (border*2)+20)
+             if(p.location.y < (border-20))
         {
           p.location.y++;
         }
-         if(p.location.y > (border*2 + (height-border*4-20))) {
+         if(p.location.y > (border*2 + (height-border*8))) {
            p.location.y--;
          }
          
@@ -122,9 +122,12 @@ class Player extends Fruit
       void render()
       {
          pushMatrix(); // Stores the current transform
-    translate(this.location.x-10, this.location.y+60);
+    translate(this.location.x+30, this.location.y+80);
+    println(this.location.x);
+    println(this.location.y);
+    
+    println(e.location.x);
     println(e.location.y);
-    println(p.location.y);
 
     rotate(theta);    
     shape(group, 0, 0);

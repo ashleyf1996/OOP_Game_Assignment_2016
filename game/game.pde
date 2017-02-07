@@ -21,6 +21,7 @@ int menu=0;
  float x=0;
 float y=1.5;
 int score=0;
+boolean yo;
 boolean startEnemy = true;
 ArrayList<Instructions> targets= new ArrayList<Instructions>();  
  Instructions inst;
@@ -93,8 +94,6 @@ void keyReleased()
 }
 void draw()
 {
- 
-    
   //switch statement to switch between screens
   switch(menu)
   {
@@ -153,18 +152,7 @@ void draw()
     break;
     case 3:
     {
-          level1();
-        for(int i=0; i< fruit.size(); i++)
-        {
-            fruit.get(i).moving = false;
-        }
-           for(int i=0; i< fruit.size(); i++)
-  {
-      fruit.get(i).update();
- 
-    // o.display();
-  } 
-        
+            
       level2();
       score=0;
   
@@ -177,15 +165,6 @@ void draw()
   
   
   }
-/*  if(e.location.x == p.location.x || e.location.y == p.location.y)
-  {
-    println("  game over");
-    
-    
-  }*/
-  
- 
-  
 }
 
 void splashScreen()
@@ -336,27 +315,46 @@ void level1()
 
  for(int i=fruit.size()-1; i >=0; i--)
       {
-        Fruit o = fruit.get(i);
-        Fruit a = fruit.get(i);
-  
-        if(p.location.x >=o.location.x-15&& p.location.y>=o.location.y-15&& p.location.x<=o.location.x+15&& p.location.y<=o.location.y+15)
+        Fruit f = fruit.get(i);
+        
+        if(f instanceof Orange)
         {
-       fruit.remove(a);
-       score++;
-         fruit.remove(o);
-         score = score + 5;
-          if(score==6)
+          Orange o = (Orange) f;
+          
+          println(dist(p.location.x, p.location.y, o.location.x, o.location.y));
+          if(dist(p.location.x, p.location.y, o.location.x, o.location.y) < 50)
           {
-            menu=3;
+            fruit.remove(o);
+            score++;
+          }
+        }
+        else if(f instanceof Apple) 
+          {
+          Apple a = (Apple) f;
+          
+          println(dist(p.location.x, p.location.y, a.location.x, a.location.y));
+          if(dist(p.location.x, p.location.y, a.location.x, a.location.y) < 40)
+          {
+            fruit.remove(a);
+            score++;
+          }
+          
+          if(score==1)
+          {
+     
+                
             
           }
-       
+            
+          }
         }
+      }
+        
 
         
  }
   
-}
+
 
 void level2()
 {
@@ -399,12 +397,6 @@ void level2()
      text("*",i,60);
    }
 
-for(int i=fruit.size()-1; i >=0; i--)
-      {
-        Fruit or = fruit.get(i);
-        Fruit ar = fruit.get(i);
-      }
-  
   
 }
 void loadingBar()
