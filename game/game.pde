@@ -1,7 +1,9 @@
 Orange o;
 Orange o1;
 Orange o2;
+Orange or;
 Apple a;
+Apple ar;
 Apple a1;
 Strawberry s;
 Strawberry s1;
@@ -48,6 +50,20 @@ table = loadTable("data.tsv", "header, tsv");
     a = new Apple(width-30,height+90,0,-2);
     fruit.add(a);
   } 
+  
+  
+  
+    for(int i=0; i< 9; i++)
+  {
+    or = new Orange(width-30,height,0,-2);
+    fruit.add(o);
+  }  
+  
+   for(int i=10; i< 14; i++)
+  {
+    ar = new Apple(width-30,height+90,0,-2);
+    fruit.add(a);
+  }
    
   o1 = new Orange(width-30,height+170,0,-2);
  s = new Strawberry(width/2+75,height/2-380,0,-1);
@@ -150,8 +166,24 @@ void draw()
     break;
     case 3:
     {
+          level1();
+        for(int i=0; i< fruit.size(); i++)
+        {
+            fruit.get(i).moving = false;
+        }
+           for(int i=0; i< fruit.size(); i++)
+  {
+      fruit.get(i).update();
+ 
+    // o.display();
+  } 
+        
       level2();
       score=0;
+      or.update();
+
+      ar.update();
+
      
     }break;
   
@@ -326,7 +358,7 @@ void level1()
        score++;
          fruit.remove(o);
          score = score + 5;
-          if(score==30)
+          if(score==6)
           {
             menu=3;
             
@@ -343,15 +375,49 @@ void level2()
 {
 
 
-    strokeWeight(1.5);
+   score=0;
+    strokeWeight(3);
  stroke(211,17,98);
- fill(255,255,0);
+ fill(169,234,240);
  rect(0,0,width,height);
- fill(255,0,255);
+ fill(255);
  rect(border*2,border*2,width-border*4,height-border*4);
- fill(0); 
-    score=0;
-    text("score = "+score,width-200,35);
+ fill(0);
+ textSize(20);
+   text("score = "+score,width/2+200,40);
+   text("LEVEL 2", width/2-300,40);
+   //first one down
+   for(int i=30; i<60;i=i+10)
+   {
+     fill(211,17,98);
+     text("*",30,i);
+   }
+   //right down
+      for(int i=30; i<60;i=i+10)
+   {
+     fill(211,17,98);
+     text("*",width-30,i);
+   }
+     //top accross
+  
+    for(int i=30; i<670;i=i+10)
+   {
+     fill(211,17,98);
+     text("*",i,30);
+   }
+   //bottom across
+   for(int i=30; i<680;i=i+10)
+   {
+     fill(211,17,98);
+     text("*",i,60);
+   }
+
+for(int i=fruit.size()-1; i >=0; i--)
+      {
+        Fruit or = fruit.get(i);
+        Fruit ar = fruit.get(i);
+      }
+  
   
 }
 void loadingBar()
