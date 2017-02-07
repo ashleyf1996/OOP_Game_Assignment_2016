@@ -9,12 +9,11 @@ class Orange extends Fruit
     super(a,b,c,d);
    this.setOnce = false;
          
-         create();
+       
    
   }
   
-  void create();
-  {
+
    void update()
    {
      

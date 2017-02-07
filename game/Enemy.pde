@@ -1,11 +1,14 @@
 PShape enemy;
 class Enemy extends Fruit
 {
+  float theta;
   boolean setOnce;
+  PVector forward;
   Enemy(float a, float b, float c, float d)
   {
     super(a,b,c,d);
-  
+    forward = new PVector(0, -1);
+    this.theta = 0;
     create();
 
   }
@@ -38,6 +41,7 @@ class Enemy extends Fruit
   
   void update()
   {
+                  //boolean variable start enemy
                 if(startEnemy == true)
                 {
                   SplashScreenEnemy.location.add(velocity);
@@ -46,16 +50,21 @@ class Enemy extends Fruit
                   location.sub(velocity);   
                   }
                }
-               else
-               if(startEnemy == false)
+               else if(startEnemy == false)
                {
-                     e.location.x = lerp(e.location.x,p.location.x,0.003);
-                      e.location.y = lerp(e.location.y,p.location.y,0.003);
+                  this.location.x = lerp(this.location.x,p.location.x-40, 0.005);
+                  this.location.y = lerp(this.location.y,p.location.y-40, 0.005);
+
+                if(dist(this.location.x,this.location.y,p.location.x,p.location.y) < 50) {
+                 println("Hey");
+               }
                  
+              
+               
                }
                        
-  }
-     
+        }
+       
         
               
    
@@ -64,7 +73,7 @@ class Enemy extends Fruit
       void render()
       {
         pushMatrix(); // Stores the current transform
-  translate(location.x, location.y);
+  translate(this.location.x, this.location.y);
    
      shape(enemy, 0, 0);
   //

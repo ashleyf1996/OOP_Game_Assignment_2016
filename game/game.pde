@@ -60,7 +60,7 @@ table = loadTable("data.tsv", "header, tsv");
 
   s1 = new Strawberry(width/2+100,height/2,0,-1);
   p= new Player(width/2,height/2,0,-1);
-  e = new Enemy(width/2,height/2,0,-1);
+  e = new Enemy(width,height,0,-1);
   p1= new Player(width/2-320,height,0,-5);
     SplashScreenEnemy = new Enemy(width/2-320,height,0,-5);
  
@@ -144,7 +144,6 @@ void draw()
     // o.display();
   }  
     
-   p.update();
     fill(255);
     e.update();
      e.render();
