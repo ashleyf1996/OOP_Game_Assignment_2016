@@ -39,25 +39,20 @@ table = loadTable("data.tsv", "header, tsv");
 //put param here-----
   for(int i=0; i< 3; i++)
   {
-    o = new Orange(width-30,height,0,-1);
+    o = new Orange(width-30,height,0,-2);
     fruit.add(o);
   }  
   
    for(int i=4; i< 6; i++)
   {
-    a = new Apple(width-30,height+90,0,-1);
+    a = new Apple(width-30,height+90,0,-2);
     fruit.add(a);
   } 
- 
-    for(int i=5; i< 6; i++)
-  {
-    s = new Strawberry(width/2+75,height/2-380,0,-1);
-    fruit.add(o);
-  }  
-  o1 = new Orange(width-30,height+170,0,-1);
-
- a1 = new Apple(width-30,height+260,0,-1);
- o2 = new Orange(width-30,height+340,0,-1);
+   
+  o1 = new Orange(width-30,height+170,0,-2);
+ s = new Strawberry(width/2+75,height/2-380,0,-1);
+ a1 = new Apple(width-30,height+260,0,-2);
+ o2 = new Orange(width-30,height+340,0,-2);
 
   s1 = new Strawberry(width/2+100,height/2,0,-1);
   p= new Player(width/2,height/2,0,-1);
@@ -298,10 +293,9 @@ void level1()
       {
         Fruit o = fruit.get(i);
         Fruit a = fruit.get(i);
-        Fruit s = fruit.get(i);
+  
         if(p.location.x >=o.location.x-15&& p.location.y>=o.location.y-15&& p.location.x<=o.location.x+15&& p.location.y<=o.location.y+15)
         {
-          fruit.remove(s);
        fruit.remove(a);
        score++;
          fruit.remove(o);
