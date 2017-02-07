@@ -281,9 +281,9 @@ fill(0);
 void level1()
 {
 
-    strokeWeight(1);
+    strokeWeight(2);
  stroke(211,17,98);
- fill(151,245,244);
+ fill(169,234,240);
  rect(0,0,width,height);
  fill(255);
  rect(border*2,border*2,width-border*4,height-border*4);
