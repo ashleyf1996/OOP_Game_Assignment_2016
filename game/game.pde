@@ -21,7 +21,7 @@ int menu=0;
  float x=0;
 float y=1.5;
 int score=0;
-boolean yo;
+boolean win= true;
 boolean startEnemy = true;
 ArrayList<Instructions> targets= new ArrayList<Instructions>();  
  Instructions inst;
@@ -126,6 +126,7 @@ void draw()
     break;
    case 2: 
     {
+      
       level1();
         for(int i=0; i< fruit.size(); i++)
         {
@@ -159,13 +160,23 @@ void draw()
      
     }break;
   
-        
+       
+        }
     
   
-  
+     if(win==false)
+        {
+      
+     fill(0);
+           rect(0,0,width,height);
+           text("WELDONE! YOU ESCAPED!",width,height);
+      
+      
+    } 
+       
   
   }
-}
+
 
 void splashScreen()
 {
@@ -336,15 +347,15 @@ void level1()
           if(dist(p.location.x, p.location.y, a.location.x, a.location.y) < 40)
           {
             fruit.remove(a);
-            score++;
+            score= score+2;
           }
           
           if(score==1)
           {
-     
-                
-            
+            win=false;
           }
+          
+    
             
           }
         }
@@ -352,7 +363,7 @@ void level1()
         
 
         
- }
+
   
 
 
