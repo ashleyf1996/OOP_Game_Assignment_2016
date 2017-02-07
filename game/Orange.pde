@@ -1,32 +1,40 @@
-PShape orange;
 class Orange extends Fruit
 {
  boolean setOnce;
+ PShape orange;
+ PShape body;
+ PShape stem;
  
   Orange(float a,float b,float c,float d)
   {
      //calling constuctor in super classs 
     super(a,b,c,d);
    this.setOnce = false;
-         
-       
+   
+   orange = createShape(GROUP);
+   
+   body = createShape(ELLIPSE, 0, 0, 40, 40);
+   body.setFill(color(255, 128, 0));
+   
+   stem = createShape(TRIANGLE, -7, -18, 0, -10, 7, -18);
+   stem.setFill(color(51, 204, 51));
+   
+   orange.addChild(body);
+   orange.addChild(stem);
    
   }
   
 
    void update()
    {
-     
+     pushMatrix();
+       translate(location.x, location.y);
+       shape(orange, 0, 0);
+       popMatrix();
      if(super.moving == true)
      {
-     fill(255,154,3);
-      stroke(0);
-      strokeWeight(2);
-      ellipse(location.x,location.y,40,40);
-    
-      stroke(0);
-      fill(36,185,44);
-      triangle(location.x-7,location.y-18,location.x,location.y-10,location.x+7,location.y-18);
+       
+       
   //if(loc.y==100)
    //  {
    //    loc.y--;
@@ -40,13 +48,13 @@ class Orange extends Fruit
             location.sub(velocity);
           }
           
-            if(o1.location.y == 300)
+            if(location.y == 300)
           
           {
             location.sub(velocity);
           }
           
-           if(o2.location.y == 500)
+           if(location.y == 500)
           
           {
             location.sub(velocity);
@@ -61,14 +69,6 @@ class Orange extends Fruit
       location.y = random(70, height - 70);
           this.setOnce = true;
        }
-      fill(255,154,3);
-      stroke(0);
-      strokeWeight(2);
-      ellipse(location.x,location.y,40,40);
-    
-      stroke(0);
-      fill(36,185,44);
-      triangle(location.x-7,location.y-18,location.x,location.y-10,location.x+7,location.y-18);
        
      }
     

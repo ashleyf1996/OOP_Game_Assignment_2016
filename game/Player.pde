@@ -61,7 +61,8 @@ class Player extends Fruit
       float power=1;
       void update()
       {
-        
+        println("Player X:"+p.location.x);
+        println("Player Y:"+p.location.y);
         forward.x = sin(theta);
         forward.y = -cos(theta);
         
@@ -122,12 +123,7 @@ class Player extends Fruit
       void render()
       {
          pushMatrix(); // Stores the current transform
-    translate(this.location.x+30, this.location.y+80);
-    println(this.location.x);
-    println(this.location.y);
-    
-    println(e.location.x);
-    println(e.location.y);
+    translate(this.location.x+30, this.location.y);
 
     rotate(theta);    
     shape(group, 0, 0);

@@ -94,6 +94,8 @@ void keyReleased()
 }
 void draw()
 {
+  println("Mouse X: "+mouseX);
+  println("Mouse Y: "+mouseY);
   //switch statement to switch between screens
   switch(menu)
   {
@@ -143,7 +145,7 @@ void draw()
  
     // o.display();
   }  
-    
+ 
     fill(255);
     e.update();
      e.render();
@@ -340,8 +342,7 @@ void level1()
      text("*",i,60);
    }
 
-
- for(int i=fruit.size()-1; i >=0; i--)
+ for(int i=0; i<fruit.size(); i++)
       {
         Fruit f = fruit.get(i);
         
@@ -349,8 +350,7 @@ void level1()
         {
           Orange o = (Orange) f;
           
-          println(dist(p.location.x, p.location.y, o.location.x, o.location.y));
-          if(dist(p.location.x, p.location.y, o.location.x, o.location.y) < 50)
+          if(dist(p.location.x, p.location.y, o.location.x, o.location.y) < 40)
           {
             fruit.remove(o);
             score++;
@@ -360,13 +360,14 @@ void level1()
           {
           Apple a = (Apple) f;
           
-          println(dist(p.location.x, p.location.y, a.location.x, a.location.y));
-          if(dist(p.location.x, p.location.y, a.location.x, a.location.y) < 50)
+          if(dist(p.location.x, p.location.y, a.location.x, a.location.y) < 40)
           {
             fruit.remove(a);
-            score ++;
+            score++;
           }
           
+        }
+      }
  
        
          
@@ -377,8 +378,8 @@ void level1()
      
             
           }
-        }
-      }
+
+
         
 
         

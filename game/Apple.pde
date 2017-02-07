@@ -1,6 +1,8 @@
 class Apple extends Fruit
 {
  boolean setOnce;
+ PShape body;
+ PSha
  
   Apple(float a,float b,float c,float d)
   {
