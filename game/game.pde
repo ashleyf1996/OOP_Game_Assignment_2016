@@ -144,10 +144,7 @@ void draw()
     fill(255);
     e.update();
      e.render();
-     
-     s.update();
-       s.render();
- 
+  
 
     }
     break;
@@ -281,14 +278,43 @@ fill(0);
 void level1()
 {
 
-    strokeWeight(2);
+    strokeWeight(3);
  stroke(211,17,98);
  fill(169,234,240);
  rect(0,0,width,height);
  fill(255);
  rect(border*2,border*2,width-border*4,height-border*4);
  fill(0);
-   text("score = "+score,width-200,35);
+ textSize(20);
+   text("score = "+score,width/2+200,40);
+   text("LEVEL 1", width/2-300,40);
+   //first one down
+   for(int i=30; i<60;i=i+10)
+   {
+     fill(211,17,98);
+     text("*",30,i);
+   }
+   //right down
+      for(int i=30; i<60;i=i+10)
+   {
+     fill(211,17,98);
+     text("*",width-30,i);
+   }
+     //top accross
+  
+    for(int i=30; i<670;i=i+10)
+   {
+     fill(211,17,98);
+     text("*",i,30);
+   }
+   //bottom across
+   for(int i=30; i<680;i=i+10)
+   {
+     fill(211,17,98);
+     text("*",i,60);
+   }
+
+
  for(int i=fruit.size()-1; i >=0; i--)
       {
         Fruit o = fruit.get(i);
