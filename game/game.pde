@@ -21,7 +21,7 @@ int menu=0;
  float x=0;
 float y=1.5;
 int score=0;
-boolean win= true;
+int stage =0;
 boolean startEnemy = true;
 ArrayList<Instructions> targets= new ArrayList<Instructions>();  
  Instructions inst;
@@ -162,17 +162,34 @@ void draw()
   
        
         }
-    
-  
-     if(win==false)
+     
+    if(stage == 1)
+    {
+      
+          fill(0);
+           rect(0,0,width,height);
+           
+           fill(255,0,0);
+           textSize(30);
+           text("WELDONE YOU ESCAPED THE ENEMY!",width/2-250,height/2);
+      
+    }
+     
+     if(stage==2)
         {
       
-     fill(0);
+              fill(0);
            rect(0,0,width,height);
-           text("WELDONE! YOU ESCAPED!",width,height);
+           
+           fill(255,0,0);
+           textSize(30);
+
+           text("DEFEATED!",width/2-100,height/2);
+      
+
       
       
-    } 
+    }
        
   
   }
@@ -344,18 +361,20 @@ void level1()
           Apple a = (Apple) f;
           
           println(dist(p.location.x, p.location.y, a.location.x, a.location.y));
-          if(dist(p.location.x, p.location.y, a.location.x, a.location.y) < 40)
+          if(dist(p.location.x, p.location.y, a.location.x, a.location.y) < 50)
           {
             fruit.remove(a);
-            score= score+2;
+            score ++;
           }
           
-          if(score==1)
-          {
-            win=false;
-          }
-          
-    
+ 
+       
+         
+         if(score == 5)
+         {
+           stage = 1;
+         }
+     
             
           }
         }

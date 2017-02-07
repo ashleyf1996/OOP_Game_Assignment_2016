@@ -49,6 +49,7 @@ class Enemy extends Fruit
                   {
                   location.sub(velocity);   
                   }
+                 
                }
                else if(startEnemy == false)
                {
@@ -56,6 +57,9 @@ class Enemy extends Fruit
                   this.location.y = lerp(this.location.y,p.location.y, 0.010);
 
                 if(dist(this.location.x,this.location.y,p.location.x,p.location.y) < 50) {
+                  
+                  stage=2;
+                  println("hahaha");
                }
                  
               
