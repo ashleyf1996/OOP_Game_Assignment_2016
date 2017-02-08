@@ -54,10 +54,10 @@ class Enemy extends Fruit
                }
                else if(startEnemy == false)
                {
-                  this.location.x = lerp(this.location.x,p.location.x, 0.010);
-                  this.location.y = lerp(this.location.y,p.location.y, 0.010);
+                  this.location.x = lerp(this.location.x,p.location.x, 0.006);
+                  this.location.y = lerp(this.location.y,p.location.y, 0.006);
 
-                if(dist(this.location.x,this.location.y,p.location.x,p.location.y) < 40) {
+                if(dist(this.location.x,this.location.y,p.location.x,p.location.y) < 20) {
                   
                  stage=2;
                 

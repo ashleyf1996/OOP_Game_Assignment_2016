@@ -72,6 +72,7 @@ TECHNICALITY & FEATURES I'M PROUD OF
 - I used booleans and all types of variables
 - I drew my shapes precisely
 - I picked my colours and fonts to be in co-cordiantion with eachother 
+- I read the instructions for the game from a DATA FILE
 
 
 
@@ -92,6 +93,10 @@ INSTRUCTIONS
 
 ENJOY PLAYING!
 
+Video of game:
+
+
+[![Video](http://img.youtube.com/vi/S8SIFTEqghQ/0.jpg)](hhttps://www.youtube.com/watch?v=GV6mdkRoPiU)
 
 
 
