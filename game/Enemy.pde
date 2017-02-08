@@ -56,9 +56,9 @@ class Enemy extends Fruit
                   this.location.x = lerp(this.location.x,p.location.x, 0.010);
                   this.location.y = lerp(this.location.y,p.location.y, 0.010);
 
-                if(dist(this.location.x,this.location.y,p.location.x,p.location.y) < 50) {
+                if(dist(this.location.x,this.location.y,p.location.x,p.location.y) < 30) {
                   
-                 stage=2;
+                 //stage=2;
                   println("hahaha");
                }
                  

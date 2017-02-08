@@ -350,7 +350,7 @@ void level1()
         {
           Orange o = (Orange) f;
           
-          if(dist(p.location.x, p.location.y, o.location.x, o.location.y) < 40)
+          if(dist(p.location.x, p.location.y, o.location.x, o.location.y-80) < 40)
           {
             fruit.remove(o);
             score++;
@@ -360,7 +360,7 @@ void level1()
           {
           Apple a = (Apple) f;
           
-          if(dist(p.location.x, p.location.y, a.location.x, a.location.y) < 40)
+          if(dist(p.location.x, p.location.y, a.location.x, a.location.y-80) < 40)
           {
             fruit.remove(a);
             score++;
