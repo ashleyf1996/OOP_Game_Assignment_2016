@@ -62,7 +62,7 @@ table = loadTable("data.tsv", "header, tsv");
   s1 = new Strawberry(width/2+100,height/2,0,-1);
   p= new Player(width/2,height/2,0,-1);
   e = new Enemy(width,height,0,-1);
-  p1= new Player(width/2-320,height,0,-5);
+  p1= new Player(width/2-350,height,0,-5);
     SplashScreenEnemy = new Enemy(width/2-320,height,0,-5);
  
 
@@ -94,8 +94,7 @@ void keyReleased()
 }
 void draw()
 {
-  println("Mouse X: "+mouseX);
-  println("Mouse Y: "+mouseY);
+ 
   //switch statement to switch between screens
   switch(menu)
   {
@@ -179,7 +178,7 @@ void draw()
      
      if(stage==2)
         {
-      
+              println("ash");
               fill(0);
            rect(0,0,width,height);
            

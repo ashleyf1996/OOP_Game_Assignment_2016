@@ -61,8 +61,7 @@ class Player extends Fruit
       float power=1;
       void update()
       {
-        println("Player X:"+p.location.x);
-        println("Player Y:"+p.location.y);
+       
         forward.x = sin(theta);
         forward.y = -cos(theta);
         
@@ -114,7 +113,7 @@ class Player extends Fruit
           
          
          p1.location.add(velocity);
-      if(p1.location.y == 200)
+      if(p1.location.y == 100)
        {
           location.sub(velocity);
        }
