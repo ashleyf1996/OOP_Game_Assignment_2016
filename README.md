@@ -44,7 +44,6 @@ DESIGN
 					- This is a made up creature of mine intended to look scary and "terrify" the player. 
 - I selected the colours of my features very carefully to give the idea of a "tropic scene" as fruit is assoiciated with the tropics, with blue being my predominent colour.
 
-
 FEATURES
 
 Splash screen
@@ -53,8 +52,18 @@ Splash screen
 - The fruit in the game are moving up the right hand side to give the enemy an idea of the fruit that is going to be in the game.
 -The player and the enemy move up the other side of the screen 
 
-Level
-- The player 
+Level 1
+- The player moves by a rotation of keys (explain in instructions) to rotate around the board
+- The enemies follows the player constantly 
+- When the Player touches fruit their score is incremented. When the player touches an orange, their score increments by 1, and if they touch and apple it increments by 5.
+
+Win/Lose screens 
+
+-  When their score is 20 ie. they have collected all the fruit, the game is over and a screen comes up telling the user they have defeated the enemy. If the player touches the enemy or the enemy touches the player, its game over and a screen comes up telling the user they have been defeated.
+
+
+TECHNICALITY
+
 
 
 

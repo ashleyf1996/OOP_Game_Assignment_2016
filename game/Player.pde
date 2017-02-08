@@ -31,31 +31,30 @@ class Player extends Fruit
    
       
              fill(165,65,65);
-                   PShape leftEar = createShape(ELLIPSE,-20,-10,20,20);
+               PShape leftEar = createShape(ELLIPSE,-20,-10,20,20);
                PShape rightEar = createShape(ELLIPSE,20,-10,20,20);
                fill(255);
                PShape leftEye= createShape(ELLIPSE,-6,-3,12,12);
-                PShape rightEye= createShape(ELLIPSE,+6,-3,12,12);
-                fill(0);
-                PShape leftEyeDot= createShape(ELLIPSE,-4,-3,2,2);
-                PShape rightEyeDot =createShape(ELLIPSE,+4,-3,2,2);
+               PShape rightEye= createShape(ELLIPSE,+6,-3,12,12);
+               fill(0);
+               PShape leftEyeDot= createShape(ELLIPSE,-4,-3,2,2);
+               PShape rightEyeDot =createShape(ELLIPSE,+4,-3,2,2);
                 
-                fill(183,83,83);
+               fill(183,83,83);
                PShape body = createShape(ELLIPSE,0,39,55,45);
-            PShape head = createShape(ELLIPSE,0,0,40,30);
+               PShape head = createShape(ELLIPSE,0,0,40,30);
             
             
-              // PShape rectangle = createShape(RECT,-25,32,49,30);
+           
                 group.addChild(head);
                 group.addChild(body);
                 group.addChild(leftEar);
                 group.addChild(rightEar);
-                  group.addChild(leftEye);
-                     group.addChild(rightEye);
-                      group.addChild(leftEyeDot);
-                     group.addChild(rightEyeDot);
-               // group.addChild(rectangle);
-                
+                group.addChild(leftEye);
+                group.addChild(rightEye);
+                group.addChild(leftEyeDot);
+                group.addChild(rightEyeDot);
+              
 
                }
       float power=1;

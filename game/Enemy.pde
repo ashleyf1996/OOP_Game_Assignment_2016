@@ -28,14 +28,15 @@ class Enemy extends Fruit
                  fill(0,0);
                PShape lineInMouth = createShape(ELLIPSE,0,135,35,5);
                fill(0);
-                  PShape leftEyeDot = createShape(ELLIPSE,-10,110,5,5);
-             PShape rightEyeDot = createShape(ELLIPSE,+13,110,5,5);
-                  enemy.addChild(mainCircle);
+               PShape leftEyeDot = createShape(ELLIPSE,-10,110,5,5);
+               PShape rightEyeDot = createShape(ELLIPSE,+13,110,5,5);
+               
+                enemy.addChild(mainCircle);
                 enemy.addChild(leftEye);
                 enemy.addChild(rightEye);
                 enemy.addChild(bottomEye);
-                 enemy.addChild(lineInMouth);
-               enemy.addChild(leftEyeDot);       
+                enemy.addChild(lineInMouth);
+                enemy.addChild(leftEyeDot);       
                enemy.addChild(rightEyeDot);
   }
   
@@ -68,10 +69,7 @@ class Enemy extends Fruit
                        
         }
        
-        
-              
-   
-          
+           
 
       void render()
       {
