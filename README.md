@@ -96,7 +96,7 @@ ENJOY PLAYING!
 Video of game:
 
 
-[![Video](http://img.youtube.com/vi/S8SIFTEqghQ/0.jpg)](hhttps://www.youtube.com/watch?v=GV6mdkRoPiU)
+[![Video](http://img.youtube.com/vi/GV6mdkRoPiU/0.jpg)](https://www.youtube.com/watch?v=GV6mdkRoPiU)
 
 
 
