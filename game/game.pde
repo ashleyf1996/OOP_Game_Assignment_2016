@@ -38,13 +38,13 @@ size(700,600);
 background(0);
 table = loadTable("data.tsv", "header, tsv");
 //put param here-----
-  for(int i=0; i< 3; i++)
+  for(int i=0; i< 5; i++)
   {
     o = new Orange(width-30,height,0,-2);
     fruit.add(o);
   }  
   
-   for(int i=4; i< 6; i++)
+   for(int i=6; i< 9; i++)
   {
     a = new Apple(width-30,height+90,0,-2);
     fruit.add(a);
@@ -362,7 +362,7 @@ void level1()
           if(dist(p.location.x, p.location.y, a.location.x, a.location.y-80) < 40)
           {
             fruit.remove(a);
-            score++;
+            score = score+5;
           }
           
         }
@@ -370,7 +370,7 @@ void level1()
  
        
          
-         if(score == 5)
+         if(score == 20)
          {
            stage = 1;
          }
