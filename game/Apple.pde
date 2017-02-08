@@ -13,6 +13,7 @@ class Apple extends Fruit
    {
       if(super.moving == true)
      {
+       stroke(0);
      fill(0,255,0);
      //line 1
      line(location.x,location.y-20,location.x,location.y-25);
@@ -38,6 +39,7 @@ class Apple extends Fruit
      }
      else 
      {
+       stroke(0);
        if(this.setOnce == false) {
       location.x = random(90, width - 90);
       location.y = random(90, height - 90);

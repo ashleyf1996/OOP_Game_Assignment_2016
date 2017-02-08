@@ -47,14 +47,14 @@ class Orange extends Fruit
           {
             location.sub(velocity);
           }
-          
-            if(location.y == 300)
+      
+            if(o1.location.y == 300)
           
           {
             location.sub(velocity);
           }
           
-           if(location.y == 500)
+           if(o2.location.y == 500)
           
           {
             location.sub(velocity);

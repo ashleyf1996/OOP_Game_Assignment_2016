@@ -5,8 +5,6 @@ Orange or;
 Apple a;
 Apple ar;
 Apple a1;
-Strawberry s;
-Strawberry s1;
 Player p;
 Player p1;
 Enemy e;
@@ -55,11 +53,12 @@ table = loadTable("data.tsv", "header, tsv");
  
    
   o1 = new Orange(width-30,height+170,0,-2);
- s = new Strawberry(width/2+75,height/2-380,0,-1);
+  
+
  a1 = new Apple(width-30,height+260,0,-2);
  o2 = new Orange(width-30,height+340,0,-2);
 
-  s1 = new Strawberry(width/2+100,height/2,0,-1);
+
   p= new Player(width/2,height/2,0,-1);
   e = new Enemy(width,height,0,-1);
   p1= new Player(width/2-350,height,0,-5);
@@ -119,8 +118,7 @@ void draw()
       p1.render();
       SplashScreenEnemy.update();
      SplashScreenEnemy.render();
-       s.update();
-       s.render();
+  
       /*s1.update();
        s1.render();*/
     }
@@ -275,6 +273,7 @@ fill(0);
     line(60,230,80,230);
    // noFill();
    // rect(80,200,110,35);
+
     text("I'm a fruit eating bear!",85,210);
     text("Escape the enemy!",85,230);
     
