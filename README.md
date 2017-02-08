@@ -62,8 +62,33 @@ Win/Lose screens
 -  When their score is 20 ie. they have collected all the fruit, the game is over and a screen comes up telling the user they have defeated the enemy. If the player touches the enemy or the enemy touches the player, its game over and a screen comes up telling the user they have been defeated.
 
 
-TECHNICALITY
+TECHNICALITY & FEATURES I'M PROUD OF 
+- I used classes and objects in this assignment
+- I used INHERITANCE to create instances of fruit
+- POLYMORPHISM is shown in the fruit class
+-I used array lists to hold various things instructions and fruit
+- I used loops and normal arrays 
+- I used PSHAPES to draw things and PVECTORS to draw and move things
+- I used booleans and all types of variables
+- I drew my shapes precisely
+- I picked my colours and fonts to be in co-cordiantion with eachother 
 
+
+
+INSTRUCTIONS 
+		
+			- press PLAY to begin 
+			- rotate/move the player by using the following keys
+							- "W": move forward
+							- "D": rotate left
+							- "A": rotate right
+			- collect the fruit: 
+
+							- Apples: 5 points 
+							- Oranges: 1 point
+
+			- if you collect all the fruit you win 
+			- if the enemy catches you, sorry try again!
 
 
 

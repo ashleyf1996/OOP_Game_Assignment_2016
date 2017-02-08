@@ -60,7 +60,7 @@ class Enemy extends Fruit
                 if(dist(this.location.x,this.location.y,p.location.x,p.location.y) < 40) {
                   
                  stage=2;
-                  println("hahaha");
+                
                }
                  
               
