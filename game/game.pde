@@ -71,9 +71,9 @@ boolean[] keys = new boolean[1000];
 ArrayList<Fruit> fruit = new ArrayList<Fruit>();
 void mousePressed()
 {
-  if(mouseX>width/2-80 && mouseX<width/2+80)
+  if(mouseX>width/2-46 && mouseX<width/2+46)
   {
-    if(mouseY>height/2-65-40&& mouseY<height/2-65+40)
+    if(mouseY>height/2-65-26&& mouseY<height/2-65+26)
     {
        menu=2;
     }
@@ -313,7 +313,8 @@ void level1()
  fill(0);
  textSize(20);
    text("score = "+score,width/2+200,40);
-   text("LEVEL 1", width/2-300,40);
+   stroke(3);
+   text("Can you escape?", width/2-300,40);
    //first one down
    for(int i=30; i<60;i=i+10)
    {
