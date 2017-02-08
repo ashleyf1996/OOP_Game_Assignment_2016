@@ -71,9 +71,9 @@ boolean[] keys = new boolean[1000];
 ArrayList<Fruit> fruit = new ArrayList<Fruit>();
 void mousePressed()
 {
-  if(mouseX>width/2 && mouseX<width/2+200)
+  if(mouseX>width/2-80 && mouseX<width/2+80)
   {
-    if(mouseY>height/2&& mouseY<height/2+70)
+    if(mouseY>height/2-65-40&& mouseY<height/2-65+40)
     {
        menu=2;
     }
