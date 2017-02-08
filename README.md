@@ -1,2 +1,9 @@
 # OOP_Game_Assignment_2016
-A game in processing.
+
+* Assignment: Create a game in Processing
+
+* My game: Fruit Fever
+
+CONCEPT
+
+- This game 
