@@ -90,6 +90,8 @@ INSTRUCTIONS
 			- if you collect all the fruit you win 
 			- if the enemy catches you, sorry try again!
 
+ENJOY PLAYING!
+
 
 
 
